@@ -1,0 +1,17 @@
+{
+  "name": "thinking.wtf",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "git@github.com:Cifixie/thinking.wtf.git",
+  "author": "Tommi <mato12@hotmail.fi>",
+  "license": "MIT",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clear": "rm -fr .cache public"
+  },
+  "dependencies": {
+    "gatsby": "^1.9.277"
+  }
+}
