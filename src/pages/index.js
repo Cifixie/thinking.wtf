@@ -5,6 +5,9 @@ import reset from "styled-reset";
 
 injectGlobal`
   ${reset}
+  * {
+    box-sizing: border-box;
+  }
   body {
     background-color: #DCDCDD;
     font-size: calc(12px + (21 - 12) * ((100vw - 320px) / (1440 - 320)));
@@ -32,7 +35,7 @@ injectGlobal`
 `;
 
 const Page = styled.div`
-  margin: 1em;
+  padding: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
