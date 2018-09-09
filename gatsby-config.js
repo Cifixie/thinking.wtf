@@ -17,6 +17,12 @@ module.exports = {
     "gatsby-plugin-styled-components",
     "gatsby-plugin-netlify",
     {
+      resolve: "gatsby-plugin-typography",
+      options: {
+        pathToConfigModule: "src/utils/typography"
+      }
+    },
+    {
       resolve: "gatsby-source-contentful",
       options: {
         spaceId: CONTENTFUL_SPACE_ID,
