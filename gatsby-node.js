@@ -1,4 +1,4 @@
-const path = require(`path`);
+const path = require("path");
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
@@ -17,7 +17,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     `).then(result => {
       result.data.allContentfulBlogPost.edges.map(({ node: { slug } }) => {
         createPage({
-          path: `/blog/${slug}/`,
+          path: `/blog/${slug}`,
           component: path.resolve(`./src/templates/blogPost.js`),
           context: {
             slug

@@ -17,12 +17,14 @@ const Page = styled.div`
     letter-spacing: 1.999px;
     text-align: center;
   }
+
   p {
     color: #46494c;
     line-height: 1.333;
     letter-spacing: 1.414px;
     text-align: justify;
   }
+
   small {
     font-size: 0.707em;
   }

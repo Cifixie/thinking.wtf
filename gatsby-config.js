@@ -1,8 +1,16 @@
+require("dotenv").config();
+
+const {
+  CONTENTFUL_SPACE_ID,
+  CONTENTFUL_ACCESS_TOKEN,
+  GOOGLE_ANALYTICS_TRACKING_ID
+} = process.env;
+
 module.exports = {
   siteMetadata: {
     title: "Thinking.wtf",
     siteUrl: "https://thinking.wtf/",
-    description: `My Diary`
+    description: "My Diary"
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -11,15 +19,14 @@ module.exports = {
     {
       resolve: "gatsby-source-contentful",
       options: {
-        spaceId: "71kh0aiiimyk",
-        accessToken:
-          "f015819de117ef8991a212b42ac67bb614f30547b2d568fe911843761091e42b"
+        spaceId: CONTENTFUL_SPACE_ID,
+        accessToken: CONTENTFUL_ACCESS_TOKEN
       }
     },
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: "UA-125028157-1",
+        trackingId: GOOGLE_ANALYTICS_TRACKING_ID,
         head: true,
         anonymize: true,
         respectDNT: true
