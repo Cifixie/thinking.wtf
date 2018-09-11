@@ -1,5 +1,6 @@
 import React from "react";
-import { injectGlobal } from "styled-components";
+import { injectGlobal, ThemeProvider } from "styled-components";
+import theme from "../theme";
 
 injectGlobal`
   * {
@@ -7,6 +8,8 @@ injectGlobal`
   }
 `;
 
-const Layout = ({ children }) => children();
+const Layout = ({ children }) => (
+  <ThemeProvider theme={theme}>{children()}</ThemeProvider>
+);
 
 export default Layout;
