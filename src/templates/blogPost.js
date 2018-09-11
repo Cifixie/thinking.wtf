@@ -1,26 +1,23 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
+import Page from "../layouts/page";
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const blogPost = this.props.data.contentfulBlogPost;
+const BlogPostTemplate = props => {
+  const blogPost = props.data.contentfulBlogPost;
 
-    return (
-      <div>
-        <h1>{blogPost.title}</h1>
-        <ReactMarkdown source={blogPost.body.body} />
-        <img
-          alt={blogPost.hero.title}
-          title={blogPost.hero.description}
-          srcSet={blogPost.hero.sizes.srcSet}
-          src={blogPost.hero.sizes.tracedSVG}
-        />
-      </div>
-    );
-  }
-}
-
-export default BlogPostTemplate;
+  return (
+    <Page>
+      <h1>{blogPost.title}</h1>
+      <ReactMarkdown source={blogPost.body.body} />
+      <img
+        alt={blogPost.hero.title}
+        title={blogPost.hero.description}
+        srcSet={blogPost.hero.sizes.srcSet}
+        src={blogPost.hero.sizes.tracedSVG}
+      />
+    </Page>
+  );
+};
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -42,3 +39,5 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export default BlogPostTemplate;
